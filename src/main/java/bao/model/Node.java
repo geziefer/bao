@@ -3,6 +3,7 @@ package bao.model;
 public class Node {
 	private int no;
 	private int counter;
+	private int simulateCounter;
 	private Player player;
 	private Node next;
 	private Node previous;
@@ -21,12 +22,28 @@ public class Node {
 		return counter;
 	}
 
-	public void resetCounter() {
-		this.counter = 0;
+	public int getSimulateCounter() {
+		return simulateCounter;
 	}
 
-	public void increaseCounter(int count) {
-		this.counter = this.counter + count;
+	public void resetCounter(Mode mode) {
+		if (mode == Mode.PLAY) {
+			counter = 0;
+		} else {
+			simulateCounter = 0;
+		}
+	}
+
+	public void increaseCounter(int count, Mode mode) {
+		if (mode == Mode.PLAY) {
+			counter += count;
+		} else {
+			simulateCounter += count;
+		}
+	}
+
+	public void resetSimulation() {
+		simulateCounter = counter;
 	}
 
 	public Player getPlayer() {
