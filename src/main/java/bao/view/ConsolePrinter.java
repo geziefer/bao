@@ -10,7 +10,7 @@ import bao.model.Player;
 public class ConsolePrinter {
 	public static void printBoard(Board board) {
 		// print side B numbers
-		List<Node> side = board.getSides().get(Player.BLACK);
+		List<Node> side = board.getSides().get(Player.SCHWARZ);
 		System.out.print("   ");
 		for (int i = Board.PLAYER_NODES / 2 - 1; i >= 0; i--) {
 			System.out.format("%2d", i);
@@ -27,7 +27,7 @@ public class ConsolePrinter {
 		// print lower side B descending
 		System.out.print("A │");
 		for (int i = Board.PLAYER_NODES / 2 - 1; i >= 0; i--) {
-			System.out.format("%2d", side.get(i).getCounter());
+			System.out.format("%2d", side.get(i).provideCounter(Mode.PLAY));
 			System.out.print(i > 0 ? "│" : "│\n");
 		}
 
@@ -36,13 +36,13 @@ public class ConsolePrinter {
 		for (int i = 0; i < Board.PLAYER_NODES / 2; i++) {
 			System.out.print("──");
 			System.out.print(i < Board.PLAYER_NODES / 2 - 1 ? "┼"
-					: "┤ S (" + board.sumCounters(Player.BLACK, Mode.PLAY) + ")\n");
+					: "┤ S (" + board.sumCounters(Player.SCHWARZ, Mode.PLAY) + ")\n");
 		}
 
 		// print upper side B descending
 		System.out.print("B │");
 		for (int i = Board.PLAYER_NODES / 2; i < Board.PLAYER_NODES; i++) {
-			System.out.format("%2d", side.get(i).getCounter());
+			System.out.format("%2d", side.get(i).provideCounter(Mode.PLAY));
 			System.out.print(i < Board.PLAYER_NODES - 1 ? "│" : "│\n");
 		}
 
@@ -54,10 +54,10 @@ public class ConsolePrinter {
 		}
 
 		// print upper side A ascending
-		side = board.getSides().get(Player.WHITE);
+		side = board.getSides().get(Player.WEISS);
 		System.out.print("B │");
 		for (int i = Board.PLAYER_NODES - 1; i >= Board.PLAYER_NODES / 2; i--) {
-			System.out.format("%2d", side.get(i).getCounter());
+			System.out.format("%2d", side.get(i).provideCounter(Mode.PLAY));
 			System.out.print(i >= Board.PLAYER_NODES / 2 + 1 ? "│" : "│\n");
 		}
 
@@ -66,13 +66,13 @@ public class ConsolePrinter {
 		for (int i = 0; i < Board.PLAYER_NODES / 2; i++) {
 			System.out.print("──");
 			System.out.print(i < Board.PLAYER_NODES / 2 - 1 ? "┼"
-					: "┤ W (" + board.sumCounters(Player.WHITE, Mode.PLAY) + ")\n");
+					: "┤ W (" + board.sumCounters(Player.WEISS, Mode.PLAY) + ")\n");
 		}
 
 		// print lower side A ascending
 		System.out.print("A │");
 		for (int i = 0; i < Board.PLAYER_NODES / 2; i++) {
-			System.out.format("%2d", side.get(i).getCounter());
+			System.out.format("%2d", side.get(i).provideCounter(Mode.PLAY));
 			System.out.print(i < Board.PLAYER_NODES / 2 - 1 ? "│" : "│\n");
 		}
 

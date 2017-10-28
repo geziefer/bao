@@ -18,12 +18,12 @@ public class Node {
 		this.opposite = null;
 	}
 
-	public int getCounter() {
-		return counter;
-	}
-
-	public int getSimulateCounter() {
-		return simulateCounter;
+	public int provideCounter(Mode mode) {
+		if (mode == Mode.PLAY) {
+			return counter;
+		} else {
+			return simulateCounter;
+		}
 	}
 
 	public void resetCounter(Mode mode) {
