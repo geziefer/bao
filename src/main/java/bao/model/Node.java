@@ -21,8 +21,12 @@ public class Node {
 		return counter;
 	}
 
-	public void setCounter(int counter) {
-		this.counter = counter;
+	public void resetCounter() {
+		this.counter = 0;
+	}
+
+	public void increaseCounter(int count) {
+		this.counter = this.counter + count;
 	}
 
 	public Player getPlayer() {
@@ -39,6 +43,10 @@ public class Node {
 
 	public Node getPrevious() {
 		return previous;
+	}
+
+	protected void setPrevious(Node previous) {
+		this.previous = previous;
 	}
 
 	public Node getOpposite() {
