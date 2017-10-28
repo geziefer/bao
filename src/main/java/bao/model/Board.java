@@ -47,7 +47,7 @@ public class Board {
 		currentNode = sideB.get(0);
 		currentNode.setPrevious(sideB.get(PLAYER_NODES - 1));
 		previousNode = currentNode.getPrevious();
-		while (currentNode.getNext() == null) {
+		while (previousNode.getNext() == null) {
 			previousNode.setNext(currentNode);
 			currentNode = previousNode;
 			previousNode = currentNode.getPrevious();

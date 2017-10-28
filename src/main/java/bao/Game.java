@@ -29,7 +29,7 @@ public class Game {
 			System.out.print("Nächster Zug: ");
 			input = reader.nextLine();
 			if (input.matches("[ab][0-7][mg]")) {
-				board.move(Player.WHITE, input.charAt(0) == 'a' ? Row.LOWER : Row.UPPER,
+				board.move(Player.BLACK, input.charAt(0) == 'a' ? Row.LOWER : Row.UPPER,
 						Character.getNumericValue(input.charAt(1)),
 						input.charAt(2) == 'm' ? Direction.CLOCK : Direction.COUNTERCLOCK);
 				if (!SHOW_INTERMEDIATE_RESULTS) {
