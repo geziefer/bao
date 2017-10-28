@@ -1,11 +1,11 @@
-package bao.model;
+package de.dieruehls.bao.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.function.Predicate;
 
-import bao.view.ConsolePrinter;
+import de.dieruehls.bao.view.ConsolePrinter;
 
 public class Board {
 	public final static int PLAYER_NODES = 16;

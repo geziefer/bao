@@ -1,21 +1,22 @@
-package bao;
+package de.dieruehls.bao;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
-import bao.model.Board;
-import bao.model.Direction;
-import bao.model.Mode;
-import bao.model.Move;
-import bao.model.Player;
-import bao.model.Row;
-import bao.view.ConsolePrinter;
+import de.dieruehls.bao.model.Board;
+import de.dieruehls.bao.model.Direction;
+import de.dieruehls.bao.model.Mode;
+import de.dieruehls.bao.model.Move;
+import de.dieruehls.bao.model.Player;
+import de.dieruehls.bao.model.Row;
+import de.dieruehls.bao.view.ConsolePrinter;
 
 public class Game {
 	public static boolean SHOW_INTERMEDIATE_RESULTS = false;
 
 	Board board;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws UnsupportedEncodingException {
 		new Game().play();
 	}
 
